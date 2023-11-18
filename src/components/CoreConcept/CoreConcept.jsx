@@ -1,4 +1,4 @@
-import "./CoreConcept.css";
+import "../CoreConcept/CoreConcept.css";
 
 //props example
 // function CoreConcept(props) {
