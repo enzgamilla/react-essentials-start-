@@ -4,10 +4,10 @@ import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept/CoreConcept.jsx";
 import TabButton from "./components/TabButton/TabButton.jsx";
 import TabContent from "./components/TabContent/TabContent.jsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
-  const [selectedTab, setSelectedTab] = useState();
+  const [selectedTab, setSelectedTab] = useState(CORE_CONCEPTS[0]);
 
   return (
     <div>
@@ -27,6 +27,9 @@ function App() {
             {CORE_CONCEPTS.map((data) => (
               <TabButton
                 key={data.id}
+                isSelected={
+                  selectedTab.title.toUpperCase() === data.title.toUpperCase()
+                }
                 onSelect={() => {
                   selectTab(data.title);
                   setSelectedTab(data);
@@ -37,11 +40,7 @@ function App() {
             ))}
           </menu>
           <div id="tab-content">
-            {selectedTab ? (
-              <TabContent {...selectedTab} />
-            ) : (
-              <p>Please select a topic...</p>
-            )}
+            <TabContent {...selectedTab} />
           </div>
         </section>
       </main>
