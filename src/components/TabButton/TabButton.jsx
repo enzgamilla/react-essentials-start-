@@ -1,9 +1,9 @@
 {
   /* children prop is build in in react to get the child in every component */
 }
-const TabButton = ({ children, onSelect, isSelected }) => {
+const TabButton = ({ children, makeActive, ...props }) => {
   return (
-    <button className={isSelected ? "active" : undefined} onClick={onSelect}>
+    <button className={makeActive ? "active" : undefined} {...props}>
       {children}
     </button>
   );

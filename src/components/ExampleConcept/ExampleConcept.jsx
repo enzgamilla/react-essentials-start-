@@ -16,10 +16,8 @@ const ExampleConcept = () => {
         {CORE_CONCEPTS.map((data) => (
           <TabButton
             key={data.id}
-            isSelected={
-              selectedTab.title.toUpperCase() === data.title.toUpperCase()
-            }
-            onSelect={() => {
+            makeActive={selectedTab.id === data.id}
+            onClick={() => {
               selectTab(data.title);
               setSelectedTab(data);
             }}
