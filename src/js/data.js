@@ -2,11 +2,18 @@ import componentsImg from "../assets/components.png";
 import propsImg from "../assets/config.png";
 import jsxImg from "../assets/jsx-ui.png";
 import stateImg from "../assets/state-mgmt.png";
+import { faJs } from "@fortawesome/free-brands-svg-icons";
+import {
+  faPuzzlePiece,
+  faSliders,
+  faDatabase,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const CORE_CONCEPTS = [
   {
     id: 1,
     image: componentsImg,
+    icon: faPuzzlePiece,
     title: "Components",
     description:
       "The core UI building block - compose the user interface by combining multiple components.",
@@ -22,6 +29,7 @@ function Welcome() {
   {
     id: 2,
     image: jsxImg,
+    icon: faJs,
     title: "JSX",
     description:
       "Return (potentially dynamic) HTML(ish) code to define the actual markup that will be rendered.",
@@ -38,6 +46,7 @@ function Welcome() {
   {
     id: 3,
     image: propsImg,
+    icon: faSliders,
     title: "Props",
     description:
       "Make components configurable (and therefore reusable) by passing input data to them.",
@@ -53,6 +62,7 @@ function Welcome(props) {
   {
     id: 4,
     image: stateImg,
+    icon: faDatabase,
     title: "State",
     description:
       "React-managed data which, when changed, causes the component to re-render & the UI to update.",

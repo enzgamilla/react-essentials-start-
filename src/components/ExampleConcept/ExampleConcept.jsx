@@ -17,6 +17,7 @@ const ExampleConcept = () => {
           <TabButton
             key={data.id}
             makeActive={selectedTab.id === data.id}
+            fontAwesomeIcon={data.icon}
             onClick={() => {
               selectTab(data.title);
               setSelectedTab(data);
